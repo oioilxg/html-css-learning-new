@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        
+        子元素将父元素高度撑开的情景：父元素没有设置高度和宽度时，子元素的高宽会将父元素撑开，父元素大小随子元素变化
+
+        高度塌陷出现原因：
+        父元素的高度没有设置（没有写死）
+        当子元素设置float属性时，子元素的变化不再影响父元素，当子元素浮动后，会脱离文档流，子元素脱离文档流，
+        导致父元素的高度丢失（高度收缩，不再包住子元素），对页面其他元素产生影响，父元素下方的元素可能上移
+
+        解决办法：开始BFC方法都是在父元素属性里设置
+        BFC：Block formating context:块格式化上下文，不被浮动元素覆盖或影响
+        CSS中的隐含属性，为元素开启BFC后，该元素会变成一个独立的区域
+        1.开启BFC的元素不会被浮动元素影响，
+            比如子元素margin-top下移会连带父元素下移，父元素开启BFC后，子元素下移不会带父元素
+        父元素开启BFC的方法之一：overflow:hidden 屏蔽overflow
+
+        2.将行内元素设置为display：inline-block 
+
+        3.将父元素的overflow设置为非visible
+        推荐 overflow:auto
+        overflow:scroll 带滚动条，根据需要设置
+
+     -->
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            overflow: auto
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: darkkhaki;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

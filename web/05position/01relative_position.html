@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        /* 
+        margin移动会影响别的元素
+
+        position：通过定位将元素摆放到任意位置
+         */
+        body{
+            font-size: 60px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(107, 179, 65);
+
+        }
+        /* 
+        position属性开启定位
+        static:默认值，元素是静止的没有开启位置
+        relative: 开启元素相对位置,元素不设置偏移量，元素不会发生变化
+            offset:偏移量，通过偏移量设置元素位置
+             垂直位置：  top和bottom通常只用一个, left和rigth通常也只用一个
+            top：越大越往下走
+            bottom：越大越往上走
+            水平位置：
+            left： 越大越靠右
+            right： 
+
+        absolute:开始元素绝对位置
+        fixed:固定位置
+        sticky:开启粘滞
+
+        */
+        .box2{
+
+            width: 200px;
+            height: 200px;
+            background-color: rgb(243, 130, 16);
+            position:relative;
+            /* 
+            相对位置：基于自己上一次的位置
+            开启position：relative相对位置，参考元素在文档流中原来（上一次的）的位置
+            向上向右移动
+
+            相对定位会增加层次，但不脱离文档流，2移动不会影响其他元素的性质
+            块还是块，行内元素还是行内元素,原来的位置还独占一行
+             */
+            bottom: 200px;
+            left: 300px;
+           
+        }
+      
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(232, 204, 48);
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

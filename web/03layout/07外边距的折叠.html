@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1, .box2{
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+         
+           /* 
+           垂直方向相连的两个盒子
+           垂直外边距会发生重叠现象
+           兄弟元素：
+                    相连垂直，两者间的距离会取两者较大的距离
+            父子元素：
+                两者都是正值，两者之间的较大值
+                两者是一正一负，两作者和
+                两者都负值：取绝大值最大
+
+
+            */
+
+        }
+
+        .box1{
+            background-color: aquamarine;
+               /* 下外边距 
+               正值bottom:不移动
+               */
+            margin-bottom: 100px;
+        }
+
+        .box2{
+            background-color: coral;
+            /* 
+            top:向下移动
+             */
+            margin-top: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

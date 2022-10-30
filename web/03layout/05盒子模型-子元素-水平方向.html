@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width:800px;
+            height:200px;
+            border:10px cornflowerblue solid;
+        }
+
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            margin-left: 100px;
+        }
+
+        /* 
+       
+        内容区的边框
+            width：
+            heigth:
+        padding:内边距，内容区与边框border间的距离
+        margin：外边框，盒子所在位置
+        针对子元素盒子子：
+        一个元素在其父元素中的位置，水平方向布局需满足：
+        margin-left + border-left + padding-left + width
+        + margin-right + border-right +padding-right =父元素内容区的宽度
+
+        */
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    
+</body>
+</html>

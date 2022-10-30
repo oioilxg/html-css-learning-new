@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            font-size: 50px;
+
+                /* 
+                none:什么都没有
+                line-through中间划一条线
+                over-line顶部有一条线
+                underline:下划线，IE现在支持了
+
+
+                 */
+
+            text-decoration:underline;
+        }
+
+
+        /* 
+        文本固定宽度后，空白区域的处理
+        white-space 设置网页如何处理空白
+        normal:正常
+        nowrap:不换行
+        pre:保留空白
+         */
+        .box2{
+            width: 200px;
+            white-space:pre;
+            text-overflow:ellipsis ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box2">
+        今天天气真好！！！！
+    </div>
+
+
+</body>
+</html>

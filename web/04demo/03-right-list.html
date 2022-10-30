@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易列表</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .nav-wrapper {
+
+            width: 300px;
+            height: 357px;
+            background-color: rgb(139, 242, 225);
+            margin-top: 1px solid #ddd;
+        }
+
+        .news-title {
+            /* 将h2转化为行内块元素 */
+            background-color: rgb(229, 244, 184);
+            display: inline-block;
+            height: 30px;
+            border-top: 1px solid red;
+            margin-top: -1px;
+            padding-top: 10px;
+        }
+
+        .news-img{
+            height: 150px;
+        }
+
+        .news-img .img-title{
+            /* 向上移动文字 */
+            margin-top: -30px;
+            /* 设置字体颜色 */
+            color: #fff;
+            /* 设置加粗 */
+            font-weight: bold;
+            /* 设置padding */
+            padding-left: 30px;
+           
+
+        }
+        .news-list{
+            margin-top: 20px;
+            margin-left: 18px;
+            list-style: square;
+            
+
+        }
+
+        .news-list li{
+            margin-bottom: 10px;
+           
+
+        }
+
+        .news-list li a{
+            font-size: 12px;
+          
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 列表外侧容器 -->
+    <div class="nav-wrapper">
+        <!-- 标题 -->
+        <h2 class="news-title"><a href="#">体育</a></h2>
+        <!-- 
+            图片容器
+         -->
+        <div class="news-img">
+            <a href="#">
+                <img src="./1.jpeg" alt="">
+                <h3 class="img-title">费德勒首负迪米 扶额头不满发挥</h2>
+            </a>
+        </div>
+
+        <ul class="news-list">
+            <li>
+                <a href="#">乔治:我爱LA 喜欢和LBJ一起打球</a>
+            </li>
+            <li>
+                <a href="#">格林:3年前降薪就在等KD 特制T恤嘲讽LBJ</a>
+            </li>
+            <li>
+                <a href="#">塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</a>
+            </li>
+            <li>
+                <a href="#">CBA下季新赛制:常规赛4组循环 增至46轮</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

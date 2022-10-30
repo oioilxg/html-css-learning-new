@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        样式的继承，为一个元素设置样式，后代会继承
+        注意：背景相关的，布局相关的不会被继承
+         */
+
+         p{
+            color:crimson;
+         }
+
+         div{
+            color: dodgerblue;
+         }
+    </style>
+</head>
+<body>
+    <p>
+        我是p元素<br/>
+        <span>
+            我是p元素中的span
+        </span>
+    </p><br/>
+    <span>
+        我是p元素之外的span
+    </span>
+    <div>
+        我是div <br/>
+            <span>
+            我是div里的span <br/>
+
+            <em>我是div里span的em</em><br/>
+            </span>
+    </div>
+</body>
+</html>

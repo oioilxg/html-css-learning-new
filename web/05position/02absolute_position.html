@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-size: 50px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(117, 240, 110);
+        }
+
+        /* 
+
+        绝对定位：基于开启position的最近的父元素
+        position:absolute
+        1.开启绝对位置不设置偏移量，本身不变
+        2.元素从文档流中脱离，其他元素会跟着移动
+        3.绝对位置的元素会盖住其他移动的元素，说明开启绝对位置的元素层级更高
+        4.绝对位置的元素参考的位置是包含块（contain block）,
+        包含块：元素离开启定位的最近的父元素,是在父元素层级上移动
+        如果所有祖先没有开启定位，则相对于根元素，html根元素（初始包含块，网页滑动时位置也相应滑动）
+        
+
+        */
+        .box2{
+            width: 200px; 
+            height: 200px;
+            background-color: rgb(242, 144, 52);
+            position:absolute;
+            top:300px;
+            left:300px;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(248, 245, 53);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

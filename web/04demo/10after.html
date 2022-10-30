@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 10px red solid;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            float: left;
+        }
+
+        .box3 {
+          clear:both;
+        }
+
+        .box1::after{
+            content: 'hello';
+            display: block;
+            clear: both;
+        }
+
+        /* 
+        当父元素有多个子元素时，其中各一个浮动，溢出文档流会导致父元素高度塌陷，
+        另一个元素固定高度能使父元素的高度被撑开，但不能写死
+        
+        解决办法：
+        1.box3用clear:both
+        2.将行内元素转化为块元素, after为行内元素
+        display: block; 
+
+
+
+        ::before” 伪元素可以在元素的内容前面插入新内容。
+        ::after” 伪元素可以在元素的内容之后插入新内容。
+
+        */
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3">aaa</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.s1{
+    background-color: darkgoldenrod;
+    border:100px solid crimson;
+    /* 
+    行内元素不支持width和height的设置
+    行内元素可以设置padding，但不会影响垂直方向的位置
+    行内可以设置border，垂直不影响
+    行内可以设置margin,垂直不影响
+     */
+}
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+a{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(35, 102, 196);
+    display:block;
+    visibility:visible;
+    /* 
+    开发的时候避免行内块
+    行内元素设置width,height不支持
+    需将行元素转化为块元素
+    display属性设置
+    inline:行内元素
+    block：块元素
+    inline-block:可以设置高宽不占据一行
+
+     */
+
+}
+    </style>
+</head>
+<body>
+    <a href="javascript:;">超链接</a>
+    <a href="javascript:;">超链接</a>
+    <span class="s1">我是span</span>
+    <div class="box1"></div>
+</body>
+</html>

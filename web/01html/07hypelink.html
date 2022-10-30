@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        超链接：从一个页面跳转到其他页面
+        超链接也是行内元素，a标签里不能放自己
+        链接可以是外部页面，也可以是内部页面
+        当需要跳转到内部页面时，一般使用相对路径
+        ***** 绝对路劲：硬盘上文件所在路径的完整信息
+            F:\workspace\web\targat02.html
+        ***** 相对路径：相对于当前文件夹所在路径
+           引用同级文件： targat02.html
+           引用上一级文件：  ../targat02.html
+        相对路径使用 ./开头../
+        如果不写./默认可以省略
+        ./当前文件所在目录，比如html_learning
+        ../ 当前目录所在的上一级目录
+
+
+     -->
+     <a href="https://www.w3school.com.cn/html/html_links.asp">w3school超链接</a>
+     <br/>
+     <a href="./05blocktag.html">内部连接</a><br/>
+     <a href="05blocktag.html">内部链接省略./</a><br/>
+     <a href="../targat02.html">上一级目录的超链接</a>
+
+</body>
+</html>

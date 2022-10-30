@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        伪元素页面中并不存在的元素，特殊位置
+         */
+         p::first-letter{
+            font-size:40px
+         }
+
+         p::first-line{
+            background-color: darkgreen;
+         }
+
+         /* 选中元素的样式 */
+         p::selection{
+            background-color: lawngreen;
+         }
+         /* 
+         元素开始的位置
+         需结合content
+          */
+         div::before{
+        content:'abc';
+        color:chocolate;
+
+
+         }
+         /* 
+         元素结束的位置 
+         需结合content
+         */
+         div::after{
+            content:'efg';
+            color:chartreuse
+
+         }
+    </style>
+</head>
+<body>
+    <div> helllo helllo hello</div>
+    <p>this is Lina from happy life word!!!</p>
+</body>
+</html>

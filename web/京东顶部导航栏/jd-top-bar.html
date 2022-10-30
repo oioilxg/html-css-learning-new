@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东顶部导航条</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        .clearfix::before,
+        .clearfix::after{
+            content:'';
+            display: table;
+            clear: both;
+        }
+
+        body{
+            /* 
+            字体：12px/1.5 1.5倍行高
+             */
+            font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+            color: #666;
+           
+        }
+        /* 外部容器的样式，与屏幕一样宽 */
+        .top-bar-wrapper{
+            width: 100%;
+            
+            /* 设置行高 行高可以和height一样高，撑起内容区的宽度 */
+            line-height: 30px;
+            /* 下边框 */
+            border-bottom: 1px solid #ddd;
+            background-color: #e3e4e5;
+        }
+
+       
+        .top-bar{
+            width: 1190px;
+            /* 
+            水平居中
+             */
+            margin: 0 auto;
+            border-color: #999;
+
+        }
+         /* 
+        单独设置字体
+         */
+        
+
+        .top-bar a, .top-bar span,
+         .top-bar i{
+
+            text-decoration: none;
+            color: #999;
+
+         }
+
+         .top-bar a:hover,
+         .top-bar a.highlight{
+            color:#f10215;
+         }
+
+        /* 
+        将location和short-cut分成水平方向两块，一个左浮动，一个右浮动
+        location和short-cut浮动会导致top-bar高度塌陷（子元素脱离文档流，不再撑起父元素的框，而变成线或收缩）
+    
+        需要设置top-bar的高度固定或clearfix清除浮动带来的影响,在div中加clearfix元素
+         */
+        .location{
+            float:left;
+        }
+       
+        .location .fas{
+            color:#f10215;
+            font-size: 14px;
+            margin-right: 4px;
+        }
+         /* 城市列表下拉框 
+         1.先设块的大小背景及边框颜色和粗细
+         2.先隐藏：display: none
+         3.点击的时候显现
+         */
+         .location .city-list{
+            display: none;
+            width: 320px;
+            height: 436px;
+            background-color: white;
+            border: 1px solid rgb(201, 197, 197);
+            /* 
+            设置绝对定位，使其不占据页眉的位置
+             */
+            position:absolute;
+            /* 
+            边款立体效果，阴影
+             */
+            box-shadow: 0 2px 2px  rgb(0,0,0,0.2);
+        }
+
+        /* 
+        鼠标点击的时候显现city-list，hover通过父元素location 显示city-list
+        只要鼠标在父元素范围，city-list一直要显示
+        点击显现： display: block;
+
+        错误绑定hover，如果绑定到current-city，鼠标一旦移除current-city,city-list的块就不显现了
+         */
+        .location:hover .city-list{
+            display: block;
+
+        }
+        .current-city{
+            padding: 0 10px;
+            border-bottom: none;
+            position: relative;
+            z-index:9999;
+        }
+        /* 
+        设置curent-city的移入效果,背景变白色
+         */
+         .current-city:hover{
+            background-color: white;
+            border: 1px solid rgb(201, 197, 197);
+            border-bottom: none;
+
+         }
+
+
+            
+
+        
+        .short-cut{
+            float:right;
+            list-style: none;
+          
+        }
+        /* 
+        short-cut中的每个元素也要通过浮动水平排列
+         */
+        .short-cut li{
+            float:left;
+        }
+
+       /* 
+       设置分割线
+        */
+        .short-cut .line{
+            width: 1px;
+            height: 10px;
+            background-color: #999;
+            /* 
+            margin
+            两个值：上下 左右
+            三个值： 上 左右 下
+            四个值： 上右下做
+             */
+            margin: 10px 10px 0;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 
+        外围容器.top-bar-wrapper
+     -->
+    <div class="top-bar-wrapper" >
+        <!-- 
+            导航栏
+         -->
+        <div class="top-bar clearfix">
+            <!-- 地理位置 -->
+            <div class="location">
+                <div class="current-city"><i class="fas fa-map-marker-alt"></i><a href="javascript:;">上海</a></div>
+                <!-- 城市列表 -->
+                <div class="city-list"></div>
+            </div>
+            <!-- 右边部分 -->
+            <div class="short-cut">
+                <li>
+                    <a href="javascript:;">你好，请登录</a>
+                    <a class="highlight" href="javascript:;">免费注册</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li> <a href="javascript:;">我的订单</a></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">我的京东</a><i class="fas fa-angle-down"></i></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">京东会员</a></li></li>
+                <li class="line"></li>
+                <li><a class="highlight" href="javascript:;">企业采购</a> <i class="fas fa-angle-down"></i></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">商家服务</a> <i class="fas fa-angle-down"></i></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">网站导航</a> <i class="fas fa-angle-down"></i></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">手机京东</a></li>
+                <li class="line"></li>
+                <li><a href="javascript:;">网站无障碍</a></li>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(111, 182, 49);
+            position:relative;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(207, 113, 25);
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom:0;
+
+        }
+
+        /* 
+        水平布局： 
+        margin left + margin right + border left + border right +
+        padding left + padding right + width = 父元素的内容区宽度
+        开启定位后增加了left和right上述等式增加两个值，
+        前提条件有left和right两个值，默认是auto
+        设置 
+        margin-left: auto;
+        margin-right: auto;
+        水平居中
+
+         */
+
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+
+        <div class="box2">
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entity</title>
+</head>
+<body>
+    <!-- 在网页编辑中的多个空格默认情况会自动被浏览器解析为一个空格
+    a<c,c会加粗
+    在html中不能直接书写一些特殊符号，比如连续空格会被解析为一个；
+    字母两侧的大于号小于号会被解析为后一位加粗；sp
+    需要用转义字符表示特殊字符的含义或用实体编号；
+    https://www.w3school.com.cn/html/html_entities.asp 
+    实体语法：
+    &实体的名字;
+    &nbsp; ----表示一个空格non-breaking space，注意以分号结尾；&#160;
+    多个空格用多个&nbsp;表示
+    &gt; ----表示大于号
+    &lt; ----小于号
+    &copy; ----版权符号©
+    &reg; ----商标®
+    <br />折行
+    标题：h1-h6
+    标题居中排列align="center"
+    插入水平线<hr />
+
+
+    -->
+    <h1 align="center">标题居中排列</h1>
+    <p>今天&nbsp;&nbsp;&nbsp;&#160;天气真不错！</p>
+    <hr />
+    <p>
+        a<b>c
+    </p>
+    <p>a&gt;c
+    </p>
+    <p>
+        b&lt;d
+    </p>
+    &copy;
+    &reg;
+    <p>
+<a href=" https://www.w3school.com.cn/html/html_entities.asp" target="_blank">w3school 实体标签</a>
+    </p>
+    <p>
+        今天天气真好<br />
+        我们出去郊游吧<br />
+    </p>
+</body>
+</html>

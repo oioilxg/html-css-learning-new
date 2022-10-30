@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        为div包含的直接包含的子元素span设置字体颜色
+        语法：div > span */
+        div > span{
+            color:blueviolet
+        }
+
+        /* 紧挨着p的span， 不是p里面的span
+         */
+         p + span{
+            color:chocolate
+         }
+
+         /* 
+        
+          */
+    </style>
+</head>
+<body>
+    <!-- 
+        div: 文档中分区或节
+        span: 文档中行内元素
+
+        父元素：直接包含子元素
+        子元素：
+        祖先元素：div
+        后代元素：直接或间接被子元素包含
+        兄弟元素：
+     -->
+    <div>
+        我是div
+        <p>我是div中的p
+            <span>
+                我是p中的span</span>
+            </span>
+        </p>
+        <span>我是div中的span</span>
+    </div>
+</body>
+</html>

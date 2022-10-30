@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="./css/all.css">
+    <style>
+        /* 
+        color:字体颜色
+        em相对于当前元素的一个font-size
+        remx相对于根元素的一个font-size
+
+        font-family
+        可选值
+        serif 衬线字体 比如字体l结尾有衬线，有小沟
+        sans-serif  横平竖直，没有小勾
+        monospace 等宽字体 每个字体间的距离一致
+        指定字体类别，浏览器会自动识别
+         */
+        p{
+            color: rgb(23, 115, 228);
+            font-size: 40px;
+            font-family: 'Microsoft YaHei', 'Heiti SC', 'tahoma, arial', 'Hiragino Sans GB', "宋体", 'sans-serif';
+        }
+        /* 
+        服务器提供给用户使用的字体 */
+        
+        /* @font-face{
+            font-family: ;
+            src: url(./);
+        } */
+
+
+
+        /* 
+        字体：放大不失真，可更改颜色，文件较小
+        矢量图：放大不会失真
+        */
+
+
+        li{
+            list-style: none;
+        }
+        /* 
+        通过伪元素befort或after设置字体图标
+         */
+        li::before{
+            content: '\f1b0';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        今天天气真好！！！！！！<br />
+        我们去郊游吧！！！！！！<br />
+
+        <!-- 
+
+            图标字体：在网页中经常使用额小型图标：
+            ①可通过引入图片，图片本身比较大
+
+
+            使用：
+            1.下载：https://fontawesome.com
+            2.解压
+            3.将CSS和webfonts复制到项目中
+            4.将all.css引入到htmlhead的link中
+            5.使用图标 class + fas固定的 + 具体图标查文档
+            6.解决乱码问题：从引用的css文件找到\f1b0 
+            .fa-paw::before {content: "\f1b0"; }
+            是fa类，找fa使用的字体
+            .fa {
+                    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+                的font-family的具体字体
+                在style里设置对应的font-familly
+                再加font-weight: 900;
+        -->
+    
+    </p>
+    <i class="fas fa-dog" style="font-size:80px; color: rgb(40, 194, 246);"></i>
+    
+
+
+    <ul>
+        <li class="">
+            锄禾日当午
+        </li>
+        <li>
+            汗滴禾下土
+        </li>
+        <li>
+            谁知盘中餐
+        </li>
+        <li>
+            粒粒皆辛苦
+        </li>
+    </ul>
+</body>
+</html>
