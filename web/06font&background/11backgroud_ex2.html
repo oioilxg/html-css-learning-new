@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 550px;
+            height: 550px;
+            overflow: auto;
+            background-color: rgb(179, 229, 159);
+            background-image: url("./dahuangmao-04.png");
+            background-repeat: no-repeat;
+            padding: 10px;
+
+
+            /* backgroud-origin ：元素块偏移量计算起点
+                origin在前，clip在后
+                backgroud-clip ：背景块显示范围，裁剪大小
+                background-origin: border-box; background-clip: 
+            裁剪背景块大小，范围
+             */
+            background-origin: border-box;
+            background-clip: content-box;
+
+            background-position: 0 0;
+            /* 图片大小
+             */
+            background-size: contain;
+        }
+
+        .box2 {
+            width: 250px;
+            height: 1000px;
+            background-color: rgb(235, 146, 102);
+            background: url("./dahuangmao-04.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

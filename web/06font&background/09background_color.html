@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        背景图：块大小 + 元素
+        background-color ： 区块颜色
+        background-image ： 元素
+        backgroud-repeat : 元素是否重复铺开
+
+        先position 后size
+        backgroud-position : 背景定位
+        backgroud-size ： 元素大小
+
+        origin在前，clip在后
+        backgroud-origin ：元素偏移量计算起点
+        backgroud-clip ：背景块显示范围，裁剪大小
+
+        backgroud-attachment ：是否固定，比如是否随滚动条滑动
+        
+         */
+       
+
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(153, 236, 104);
+            background-image: url(../04demo/1.jpeg);
+            /* 
+            背景元素尺寸小于块时repeat会重复填满整个块
+            non-repeat 只有一张，不铺开
+             */
+            background-repeat: no-repeat;
+            padding: 10px;
+           /* 
+           origin:计算背景图偏移量的起点，如从padding开始
+            */
+
+            background-origin: padding-box;
+             /* 
+            背景图出现的范围
+            border-box:背景出现在border下面
+            padding-box: 背景现在在padding下面，没有延申到border
+            conten-box：背景只出现在内容区
+             */
+            background-clip: content-box;
+
+            /* 
+            背景图片元素尺寸大小：100%元素与块一样大
+            一个值：宽度
+            两个值： 宽度和高度
+             */
+            /* background-size:100% auto ; */
+            background-size: contain;
+            border: 10px double red;
+
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box1"></div>
+</body>
+</html>

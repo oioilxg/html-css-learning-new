@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        /* 
+        简介信息多少不确定，高度不确定，只用让内容撑开
+         */
+        .outer{
+            width:240px;
+            margin: 100px auto;
+            /* 
+            不设置边框了，设置阴影
+            /* x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影颜色 */
+            
+             box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+             /* border: 1px red solid */
+        }
+
+
+       
+        /* 
+         加一个border查看图片是否有空白，有空白则设置图片的垂直对齐方式
+         */
+        .img-wrapper{
+           
+            /* border: 1px red solid; */
+           
+        }
+         /* 
+        vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。
+        下列值使元素相对整行垂直对齐：
+        使单元格内边距的下边缘与该行底部对齐
+         */
+         /* 
+         1.设置图片：防止溢出
+         高宽只用设置一个，宽：100%,这个宽度对应外层容器outer的宽度，填满
+         2. 设置图片对齐方式：
+        
+         基于父元素靠上靠下，此图片检查结果底部有空隙，设置vertical-align: bottom向下移动
+
+          */
+        .img-wrapper img{
+            width: 100%;  
+            vertical-align: bottom;
+        }
+     
+         /*
+        padding: 给整个info设置盒子内部的空间，没有改变margin，整个盒子大小不变
+        只压缩内部区域
+        两个值：上下 左右
+         */
+        .info{
+            padding:0 18px;
+            color:#acaaaa;
+            font-size: 14px;
+        }
+
+        
+        /* 
+        margin 是区块给外部留出的空间，一般只能设置最里面那一层，保证整个区块不移动
+        一个值：四边
+        两个值： 上下 左右
+        三个值：上 左右 下
+        四个值： 上右下左
+      */
+        .info .title{
+            color: rgb(115, 110, 110);
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+        .info .category{
+            color: rgb(168, 159, 159);
+            font-size: 14px;
+
+        }
+        /* 
+        i设置 margin-right: 7px;右边收缩7px
+         */
+        .info .category i{
+            margin-right: 7px;
+            margin-left: 4px;
+        }
+        /* 
+        简介：
+         */
+         .info .intro{
+           margin:18px 4px;
+            line-height: 20px;
+         }
+
+         .star-wrapper{
+            height: 46px;
+            line-height: 46px;
+            border-top: 1px solid rgb(197, 194, 194);
+            padding: 0 16px;
+            color:rgb(168, 175, 180);
+         }
+         .star{
+            float:left;
+         }
+      
+         .star-wrapper .weibo{
+            float:right;
+
+         }
+         .star-wrapper .light{
+            color: rgb(198, 232, 120);
+
+         }
+
+        
+    </style>
+</head>
+<body>
+    <!-- 外层容器 -->
+    <div class="outer">
+        <!-- 图片包装容器 -->
+        <div class="img-wrapper"><img src="./1.jpg" alt=""></div>
+        <!-- 文字信息 -->
+        <div class="info">
+            <h2 class="title">动画电影</h2>
+            <h3 class="category"><i class="fas fa-map-marker-alt"></i>动画</h3>
+            <p class="intro">动画简介:这是一部非常好看的迪士尼动画</p>
+        </div>
+        <!-- 评论区 -->
+        <div class="star-wrapper">
+            <ul class="star">
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+            </ul>
+            <ul class="weibo"><li class="fab fa-weibo"></li ></ul>
+        </div>
+    </div>
+    
+
+</body>
+</html>

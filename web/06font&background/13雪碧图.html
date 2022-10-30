@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* 
+        雪碧图CSS-scrite：将图片横向排列存到一个图片里面，鼠标移动或点击时依次往左移动盖住原图实现动态效果
+        解决图片闪烁问题，有效避免闪烁出现问题，通过 background-position: 
+        调整图标位置
+
+
+        雪碧图使用的步骤：
+        1.确定要使用的图标，
+        2.测量图标大小
+        3.根据测量结果创建一个元素
+        4.将元素图设置为元素的背景图片
+        5.根据backgroud-position偏移量调整每个小图标移到起始位置的距离
+        左上角：水平垂直方向都是负值
+         */
+         a:link{
+            display: block;
+            width: 93px;
+            height: 29px;
+            background-image: url("./btn.png");
+        }
+        /* 鼠标移入 */
+        a:hover{
+           background-position: -93px 0;
+        }
+        /* 
+        鼠标点击触发
+         */
+        a:active{
+            background-position: -186px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>
