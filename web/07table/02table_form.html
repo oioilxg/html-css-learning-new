@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        表单：提交数据
+        form 指向目标html，用于接收数据
+        type输入框的属性
+        text:文本
+        password:密码
+        radio:按钮
+        数据要提交到服务器必须有一个name属性，才能传到服务器被接收
+        以下案例提交密码会暴露在地址栏中，
+        后期学习密码的处理加密后post?
+        type:标签类型
+        name:标签属性
+        value:标签具体tag,对应具体的某一个标签，同一类标签中的某一个
+     -->
+
+     <form action="target.html">
+        <!-- 文本框 -->
+        <input type="text" name="username"><br/>
+        <!-- 密码框 -->
+        <input type="password" name="passaord"><br/>
+        <!-- 提交按钮 -->
+        <input type="submit" value="注册"><br/><br/>
+
+        <!-- 单选属性：name相同 还需一个value属性作为选择的值传给服务器选的是谁
+            checked为默认value,被选中
+         -->
+        单选框
+        <input type="radio" name="hello" value="a">
+        <input type="radio" name="hello" value="b"><br /><br>
+        多选框
+        <input type="checkbox" name="test" value="1">
+        <input type="checkbox" name="test" value="2">
+        <input type="checkbox" name="test" value="3"><br /><br />
+
+        下拉框
+        <select name="性别" id="1">
+            <option value="famale">女</option>
+            <option value="male">男</option>
+            <option value="none">无</option>
+        </select>
+
+
+
+
+     </form>
+</body>
+</html>

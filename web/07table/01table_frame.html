@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        这个案例用的不多！！！！！
+         */
+        table{
+            width: 50%;
+            border: 1px solid black;
+            /* 设置边框线合并 */
+            border-collapse: collapse;
+        }
+        /* cell边框 */
+        /* 
+        td中的元素默认垂直居中，字体垂直方向上位于cell中间
+        可以通过vertical-align来设置
+        bottom:文字向下
+        top：向上
+        文本排列
+        vertical-align:垂直对齐
+        text-align:center居中对齐
+
+         */
+        td{
+            border: 1px solid black;
+            height: 100px;
+            /* text-align: center; */
+            vertical-align:midd;
+            text-align:center;
+            
+        }
+        /* 
+        设置第tr行元素的颜色
+        伪元素：nth-child第n个孩子，2n偶数(even) 2n+1奇数(odd)
+         */
+         /* 
+         如果table创建时没有选择tbody，浏览器会自动创建
+         tr属于tbody的子元素
+         tr不是table的子元素
+
+          */
+        tbody > tr:nth-child(2n+1){
+            background-color: rgb(180, 239, 239);
+
+        }
+
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            /* 
+            按table-cell显示
+             */
+            display: table-cell;
+            vertical-align:middle;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            /* 
+            元素的水平居中：
+            margin：0 auto; + 
+            父元素:
+            display: table-cell;
+            vertical-align:middle;
+
+             */
+             margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <table>
+       
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+                <td>地址</td>
+            </tr>
+
+
+            <tr>
+                <td>1</td>
+                <td>lili</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>bibi</td>
+                <td>b</td>
+                <td>b</td>
+                <td>b</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>cici</td>
+                <td>c</td>
+                <td>c</td>
+                <td>c</td>
+            </tr>
+
+
+        <!-- <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot> -->
+    </table>
+</body>
+</html>
