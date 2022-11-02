@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - Xiaomi 12、Redmi K50、MIX FOLD，小米电视官方网站</title>
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入图标字体库 -->
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <!-- 引入当前页面样式 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        /* 设置宽度全屏 高度:水平居中 */
+      .topbar-wrapper{
+        width: 100%;
+        background-color: #333;
+        height: 40px;
+        line-height: 40px;
+      
+      }
+
+      /* 设置所有颜色
+
+       */
+       .topbar {
+        font-size: 12px ;
+        color:#b0b0b0
+       }
+       /* 
+       去重超链接下划线
+       display:block
+       按块元素显示
+        */
+       a{
+
+        text-decoration: none;
+        color:#b0b0b0;
+        display: block;
+
+       }
+       /* 超链接移入效果 */
+       .topbar a:hover{
+        color: #757575;
+       }
+      /* 
+      左侧浮动
+       */
+      .service,.topbar li{
+        float: left;
+      }
+      /* 下拉框的设置
+       */
+
+       .app{
+         position: relative; 
+       }
+       /* 
+       伪元素设置app下载下拉三角
+       设置hover要设置在li上
+
+        */
+        /*   .app-wrapper:hover > */
+       .app::after{
+       
+        content: '';
+        display: none;
+        /* 开启绝对定位*/
+        position: absolute; 
+        /* 
+        块元素宽高为0，得到边框border为10px的正方形
+         */
+        width: 0;
+        height: 0;
+         /* 先设置边框四个方向为透明，得到一个8px的小正方形，内部是四个相切的三角*/
+        border:8px solid transparent;
+        /* 去除上边框 */
+        border-top: none;
+         /* 
+         单独设置下边框的颜色显示出来
+          */
+        border-bottom-color: #fff;
+        right:0;
+        left:0;
+        bottom: 0;
+        margin: auto;
+
+       }
+          /* 
+      鼠标滑动显示二维码
+       */
+       
+      .app:hover .qrcode,
+      .app:hover::after{
+          display: block;
+          /* 
+          高度隐藏后再设置高度滑出
+           */
+          height: 148px;
+        }
+
+       /* 
+       鼠标移动的时候展现二维码
+        */
+        /* 
+         .app-wrapper:hover > */
+       /* .app .qrcode{
+            display: b;
+        } */
+      /* 下载app和二维码的高度 */
+        /*二维码的样式  */
+      .app .qrcode{
+        /* display: none; */
+        position: absolute;
+        left:-40px;
+        width: 124px;
+        height: 0;
+        /* overflow:滑出效果
+         */
+        overflow: hidden;
+        line-height: 1;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: 0 0 10px rgb(0,0,0,0.3);
+         /* 
+      transition样式设置过渡效果高度变化时过渡效果
+       */
+        transition: height 0.3s;
+        z-index: 9999;
+
+      }
+
+     
+   
+
+      /* 
+      二维码下方的文字
+       */
+      .app .qrcode span{
+        font-size: 14px;
+        color:#333
+      }
+      /* 
+      设置图片上下左右的margin边框给文字留出空间
+      图片为块元素可以设置margin-bottom
+      span为行内元素：设置margin-bottom无效
+       */
+      .app .qrcode img{
+        width: 90px;
+        margin: 17px;
+        /* 
+        margin-bottom移动别人，把文字往下挤，文字向下移动
+         */
+        /* margin-bottom: 50px; */
+      
+      }
+      /* 右侧浮动 */
+      .shop-car, .user-info{
+        float:right;
+
+      }
+
+        /* 
+        设置中间分割线的位置
+        font-size要和service的字体一致，撑开topbar容器
+        左右收缩8px 与service的li隔开
+        margin-top: -1px;稍微向上移动一点
+        margin-bottom: 无效
+
+         */
+      .topbar .line{
+        color: #424242;
+        font-size: 12px;
+        margin: 0 8px;
+        margin-top: -1px;
+
+      }
+      .shop-car{
+        margin-left: 26px;
+        position: relative;
+      }
+        /* 购物车背景宽度水平居中设置 */
+      .shop-car a{
+       
+        width: 120px;
+        background-color: #424242;
+        text-align: center;
+
+      }
+      .shop-car:hover a{
+        background-color: #fff;
+        color: #ff6700;
+
+      }
+
+      .shop-car i{
+        margin-right: 2px;;
+      }
+      .shop-car:hover .car-menu {
+        display: block;
+        height: 100px;
+      }
+      .shop-car .car-menu{
+        position: absolute;
+        width: 316px;
+        height: 0px;
+        background-color: #fff;
+        overflow: hidden; 
+        color: #424242;
+        box-shadow: 0 2px 12px rgb(0, 0, 0, 0.3);
+        top: 40px;
+        right:0;
+        transition: height 0.3s;
+        text-align: center;
+
+      }
+      /* 
+      padding用于item与区块的边界
+      三个参数是上 左右 下
+       */
+      .shop-car .car-menu .msg{
+        display: block;
+        font-size: 12px;
+        padding: 20px 0 20px;
+        text-align: center;
+       
+
+      }
+
+     
+     
+    </style>
+</head>
+<body>
+    <!-- 顶部导航条(深灰色部分) -->
+    <!-- 顶部导航条容器 -->
+    <div class="topbar-wrapper">
+        <!--创建内部容器 
+            top固定宽度：继承base.css 里的w
+            topbar里的三个ul float会导致高度塌陷，用clearfix去除高度塌陷问题
+          -->
+        <div class="topbar w clearfix">
+            <!-- 左侧导航条 -->
+            <ul class="service">
+                <li><a href="javascript:;">小米商城</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">MIUI</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">IoT</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">云服务</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">天星数科</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">有品</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">小爱开放平台</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">企业团购</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">资质证照</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">协议规则</a></li>
+                <li class="line">|</li>
+                <li class="app-wrapper">
+                    <a class="app" href="javascript:;">下载app
+                        <div class="qrcode">
+                            <img src="./img/download.png" alt="小米商城">
+                            <span>小米商城app</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">Select Location</a></li>
+            </ul>
+            <!-- 购物车 -->
+            <ul class="shop-car">
+                <li><a href="javascrip:;">
+                    <i class="fas fa-shopping-cart"></i> 购物车(0)</a></li>
+                <li class="car-menu">
+                   <span class="msg">购物车里还没有商品，赶快选购吧！</span> 
+                </li>
+            </ul>
+            <!-- 用户注册 -->
+            <ul class="user-info">
+                <li><a href="javascript:;">登录</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">注册</a></li>
+                <li class="line">|</li>
+                <li><a href="javascript:;">消息通知</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+
+
+</body>
+</html>

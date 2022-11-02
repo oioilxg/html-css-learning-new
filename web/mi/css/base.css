@@ -1,0 +1,31 @@
+/* 公共样式
+clearfix消除塌陷问题和外边距重叠
+ */
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+    clear:both
+}
+/* 
+字体设置：参考并查看小米首页body部分查看器“字体”
+ */
+body{
+        font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+        color: #333;
+        /* background-color: #fff;
+        min-width: 1226px; */
+}
+/* 
+主屏幕固定宽度
+固定居中
+注意：屏幕缩小时内容可能从body溢出
+ */
+.w{
+    width: 1226px;
+    /* 容器居中 */
+    margin: 0 auto;
+    /* 限制body宽度，屏幕缩小时不让内容溢出 */
+    min-width: 1226px;
+}
+
